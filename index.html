@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ethereum Address Check Tools</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+}
+
+.bgimg {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/w3images/coffeehouse.jpg");
+  min-height: 75%;
+}
+
+.menu {
+  display: none;
+}
+</style>
+</head>
+
+<body>
+    <!-- Links (sit on top) -->
+    <div class="w3-top">
+        <div class="w3-row w3-padding w3-black">
+            <div class="w3-col s3">
+                <a href="#" class="w3-button w3-block w3-black">Address Check </a>
+            </div>
+            <div class="w3-col s3">
+                <a href="#convert" class="w3-button w3-block w3-black">Convert To Remix Array Parameters</a>
+            </div>
+        </div>
+    </div>
+    <div class="w3-sand w3-grayscale w3-large">
+        <!-- Address Check  -->
+        <div class="w3-container" id="#">
+            <div class="w3-content" style="max-width:700px">
+                <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">ADDRESS CHECK</span></h5>
+                <form class="row">
+                    <div class="input-group">
+                        <label for="addresses-check" class="input-group-text">Addresses</label><br>
+                        <textarea class="form-control" id="addresses-check" rows="20" cols="80"></textarea>
+                    </div>
+                    <label for="to-wei"></label>
+                    <button id="checksum" type="button" class="btn btn-secondary btn-lg">Check and convert</button>
+                </form>
+                <div class="row">
+                    <div class="col">
+                        <h3>Result <i id="to-checksum-result-copy" class="fa fa-clipboard" style="font-size:24px"></i></h3>
+                        <div id="to-checksum-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Convert To Remix Array Parameters -->
+        <div class="w3-container" id="convert">
+            <div class="w3-content" style="max-width:700px">
+                <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">CONVERT TO REMIX ARRAY PARAMETERS </span></h5>
+                <form class="row g-3">
+                    <div class="input-group">
+                        <label for="to-checksum" class="input-group-text">Parameters</label><br>
+                        <textarea class="form-control" id="parameters-input" rows="20" cols="80"></textarea>
+                    </div>
+                    <label><input type="checkbox" name="to-wei" id="to-wei" value="Wei"> To wei (multi 10^18)</label><br>
+                    <button id="to-array-param" type="button" class="btn btn-secondary btn-lg">To Remix Array Parameter</button>
+                </form>
+                <div class="row">
+                    <div class="col">
+                        <h3>Result <i id="to-array-param-result-copy" class="fa fa-clipboard" style="font-size:24px"></i></h3>
+                        <div style="overflow-wrap: break-word;" id="to-array-param-result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End page content -->
+    </div>
+    <!-- Footer -->
+    <footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+        <p>Powered by me</p>
+    </footer>
+    <script>
+    // Tabbed Menu
+    function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < x.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+    }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+</html>
